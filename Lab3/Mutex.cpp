@@ -6,19 +6,23 @@
 
 void taskA (std::shared_ptr<Semaphore> mutex, int *count) {
     mutex->Wait();
-
+    std::cout << "tA: count before: " << *count << std::endl;
+    
     // critical section
     *count = *count + 1;
 
+    std::cout << "tA: count after: " << *count << std::endl;
     mutex->Signal();
 }
 
 void taskB (std::shared_ptr<Semaphore> mutex, int *count) {
     mutex->Wait();
+    std::cout << "tB: count before: " << *count << std::endl;
 
     // critical section
     *count = *count + 1;
 
+    std::cout << "tB: count after: " << *count << std::endl;
     mutex->Signal();
 }
 
