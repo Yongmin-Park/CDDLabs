@@ -1,10 +1,4 @@
-
-
-# % is matching
-# checks the date and time
-
-# -c it's not full compiling
-# -o out file name
+# Yongmin Park
 
 CC = g++
 CFLAGS= -std=c++11 -pthread
